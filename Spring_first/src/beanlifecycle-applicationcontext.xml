@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+
+<!-- Define your dependency -->
+<!-- here class is where you have implemented the interface-->
+<bean id="myfortune" class="com.pack.name.HappyFortuneService"></bean>
+
+<!-- here class is child class or you can say cat in animal-->
+<bean id="mycoach" class="com.pack.name.trackCoach">
+
+<!-- setup your constructor -->
+
+<constructor-arg ref="myfortune"/>
+</bean>
+
+
+<!-- useing those class whose beans you want ot create-->
+<bean id="beanlifecycle" class="com.pack.name.trackCoach"  init-method="intializr" destroy-method="destroer">
+
+<!-- this is for setting up setter injection-->
+<!-- dont use set in name like setfortune it will give error-->
+
+</bean>
+
+</beans>
+
+
+
+
+
